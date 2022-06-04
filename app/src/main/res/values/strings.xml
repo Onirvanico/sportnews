@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sport News</string>
+    <string name="title_news">News</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="ct_image">Imagem da notícia</string>
+    <string name="ct_share_button">Botão de compartilhar</string>
+    <string name="ct_favorite_button">Botão de favoritar</string>
+</resources>
