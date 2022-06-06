@@ -4,15 +4,33 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.projeto.sportnews.domain.New
+import br.com.projeto.sportnews.retrofit.SportNewsRetrofit
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class NewsViewModel : ViewModel() {
 
-    private val _news = MutableLiveData<List<New>>().apply {
-    value = listOf(
-        New(title = "title1", description = "description1"),
-        New(title = "title2", description = "description2"),
-        New(title = "title3", description = "description3"),
-        New(title = "title4", description = "description4"))
+    private val service = SportNewsRetrofit.getSportNewsService()
+    private val _news = MutableLiveData<List<New>>()
+
+    init {
+        loadList()
+
     }
+
+    private fun loadList() {
+        service.getNews().enqueue(object : Callback<List<New>> {
+            override fun onResponse(call: Call<List<New>>, response: Response<List<New>>) {
+                _news.value = response.body()
+            }
+
+            override fun onFailure(call: Call<List<New>>, t: Throwable) {
+                _news.value = emptyList()
+            }
+
+        })
+    }
+
     val news: LiveData<List<New>> = _news
 }
