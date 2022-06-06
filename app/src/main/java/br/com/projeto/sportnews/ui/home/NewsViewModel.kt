@@ -1,5 +1,6 @@
 package br.com.projeto.sportnews.ui.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -23,10 +24,12 @@ class NewsViewModel : ViewModel() {
         service.getNews().enqueue(object : Callback<List<New>> {
             override fun onResponse(call: Call<List<New>>, response: Response<List<New>>) {
                 _news.value = response.body()
+                if(response.code() != 200) Log.i("TESTE", "onResponse: " + response.errorBody())
             }
 
             override fun onFailure(call: Call<List<New>>, t: Throwable) {
                 _news.value = emptyList()
+                Log.i("TESTE_ERROR", "onFailure: " + t.message)
             }
 
         })
