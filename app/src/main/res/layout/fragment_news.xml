@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.NewsFragment">
 
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/news_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/news_recyclerview"
         android:layout_width="0dp"
@@ -17,4 +23,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

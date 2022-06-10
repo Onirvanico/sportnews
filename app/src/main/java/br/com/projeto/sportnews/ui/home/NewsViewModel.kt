@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import br.com.projeto.sportnews.domain.New
-import br.com.projeto.sportnews.retrofit.SportNewsRetrofit
+import br.com.projeto.sportnews.data.remote.retrofit.SportNewsRetrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

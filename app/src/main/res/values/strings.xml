@@ -5,4 +5,7 @@
     <string name="ct_image">Imagem da notícia</string>
     <string name="ct_share_button">Botão de compartilhar</string>
     <string name="ct_favorite_button">Botão de favoritar</string>
+    <string name="add_favorite_msg">Adicionado aos favoritos</string>
+    <string name="remove_new_msg">Removido da lista de favoritos</string>
+    <string name="no_list_info">Nada foi adicionado aos favoritos até o momento</string>
 </resources>
